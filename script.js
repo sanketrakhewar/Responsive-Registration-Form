@@ -43,7 +43,7 @@ pass.addEventListener('input', () =>{
         pass.style.borderColor = "blue";
         passerror.style.color = "blue";
     }
-    else if(pass.value.length >= 8){
+    else if(pass.value.length >= 10){
         str.innerHTML = "Strong";
         progressbarg.style.display = "block"; 
         progressbarr.style.display = "none"; 
