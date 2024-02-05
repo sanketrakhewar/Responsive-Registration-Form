@@ -72,7 +72,11 @@ function createPasswordone(){
         passerror.style.color = "green";
     }
     passwordbox1.value = password;
-    
+    progressbarg.style.display = "block"; 
+    progress.style.display = "block"; 
+    progressbarr.style.display = "none"; 
+    progressbary.style.display = "none";
+    eyeclick2()
     }
   
 
@@ -88,11 +92,20 @@ function createPassword(){
         passwordb += allChars[Math.floor(Math.random() * allChars.length)];
     }
     passwordbox.value = passwordb;
-    
+    progressbarg.style.display = "block";
+    progress.style.display = "block"; 
+    progressbarr.style.display = "none"; 
+    progressbary.style.display = "none";
+    eyeclick2()
 }
 function copypassword(){
-    passwordbox.select();
-    document.exeCommand("copy");
+    var copyText = document.getElementById("passwordb");
+     // Select the text field
+     passwordbox.select();
+     passwordbox.setSelectionRange(0, 99999); // For mobile devices
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
 }
 
 function validname() {
@@ -117,7 +130,10 @@ function validemail() {
 }
 
 
-eyeicon.onclick = function(){
+// eyeicon.onclick = function(){
+function eyeClick(){
+        document.getElementById("eyeicon").value;
+    
     if(password.type == "password"){
         password.type = "text";
         eyeicon.src = "./img/eye-open.png";
@@ -125,5 +141,11 @@ eyeicon.onclick = function(){
         password.type = "password";
         eyeicon.src = "./img/eye-close.png";
 
+    }
+}
+function eyeclick2(){
+    if(password.type == "password"){
+        password.type = "text";
+        eyeicon.src = "./img/eye-open.png";
     }
 }
